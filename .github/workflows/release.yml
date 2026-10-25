@@ -1,0 +1,77 @@
+name: Release
+
+# Builds installers for all three platforms and attaches them to a GitHub
+# Release. Triggered by pushing a version tag:
+#
+#     git tag v0.1.0
+#     git push origin v0.1.0
+#
+# The release is created as a DRAFT. Check the files, write the notes, then
+# press Publish yourself.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: write        # needed to create the release and upload to it
+
+    strategy:
+      fail-fast: false       # one platform failing shouldn't cancel the others
+      matrix:
+        include:
+          - platform: macos-latest      # Apple Silicon
+            args: '--target aarch64-apple-darwin'
+          - platform: macos-latest      # Intel Macs
+            args: '--target x86_64-apple-darwin'
+          - platform: ubuntu-22.04      # .AppImage and .deb
+            args: ''
+          - platform: windows-latest    # .msi
+            args: ''
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+          key: ${{ matrix.args }}
+
+      - name: Install system libraries
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev \
+            librsvg2-dev patchelf libxdo-dev
+
+      - run: npm install
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: 'Ember ${{ github.ref_name }}'
+          releaseBody: |
+            Download the file for your system below.
+
+            The builds are unsigned, so Windows SmartScreen and macOS Gatekeeper
+            will warn you the first time. On macOS, right-click the app and
+            choose **Open**.
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}

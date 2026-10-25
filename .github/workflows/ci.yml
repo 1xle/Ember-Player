@@ -1,0 +1,72 @@
+name: CI
+
+# Runs on every push and pull request. Catches formatting drift, lint
+# regressions and anything that stops compiling — before it reaches main.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    name: Check Rust
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev \
+            librsvg2-dev patchelf libxdo-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      # Caches ~/.cargo and target/. Without this every run recompiles the
+      # whole dependency tree and takes about ten minutes.
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Formatting
+        working-directory: src-tauri
+        run: cargo fmt --all --check
+
+      - name: Lint
+        working-directory: src-tauri
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Compile
+        working-directory: src-tauri
+        run: cargo check --all-targets
+
+  frontend:
+    name: Check frontend
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # The app is one plain HTML file with no build step, so there is nothing
+      # to bundle. This just proves the inline script still parses.
+      - name: Parse the inline script
+        run: |
+          node -e '
+            const fs = require("fs");
+            const html = fs.readFileSync("src/index.html", "utf8");
+            const blocks = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+            if (!blocks.length) { console.error("No inline script found"); process.exit(1); }
+            const js = blocks.reduce((a, b) => (a.length > b.length ? a : b));
+            new (require("vm").Script)(js);
+            console.log("Parsed " + js.length + " characters of JavaScript.");
+          '
