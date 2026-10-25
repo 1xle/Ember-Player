@@ -1,0 +1,26 @@
+[package]
+name = "ember"
+version = "0.1.0"
+description = "Ember — a lightweight music player"
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# protocol-asset is what lets <audio> play a file off the user's own disk.
+# It must match "assetProtocol" in tauri.conf.json or the build refuses to start.
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# A smaller, faster binary. Strips debug symbols and lets the compiler
+# optimise across the whole crate instead of one file at a time.
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
