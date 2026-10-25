@@ -277,6 +277,7 @@ body.is-playing .mark{animation:markpulse 1.6s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} }
 
 /* ---------- splash ---------- */
+<<<<<<< HEAD
 #splash{position:fixed; inset:0; z-index:100; display:grid; place-items:center; background:#06070a; overflow:hidden; color-scheme:dark;
   transition:opacity .7s ease, transform .9s cubic-bezier(.4,0,.2,1), filter .7s ease, visibility .7s}
 #splash.out{opacity:0; visibility:hidden; transform:scale(1.06); filter:blur(12px); pointer-events:none}
@@ -292,10 +293,17 @@ body.is-playing .mark{animation:markpulse 1.6s ease-in-out infinite}
 #splash .splash-eq i{width:4px; height:100%; border-radius:4px; background:linear-gradient(#ffd2a0,#ff5c7a);
   transform:scaleY(.12); animation:eqbar 1.2s ease-in-out infinite; box-shadow:0 0 8px rgba(255,92,122,.5)}
 
+=======
+#splash{position:fixed; inset:0; z-index:100; display:grid; place-items:center; background:#07080b; overflow:hidden; transition:opacity .6s ease, visibility .6s; color-scheme:dark}
+#splash.out{opacity:0; visibility:hidden; pointer-events:none}
+#splash .aura{position:absolute; width:90vmax; height:90vmax; max-width:900px; max-height:900px; border-radius:50%; background:radial-gradient(circle, rgba(255,92,122,.30), rgba(120,70,200,.12) 45%, transparent 68%); animation:breathe 3.2s ease-in-out infinite}
+#splash .core{position:relative; display:flex; flex-direction:column; align-items:center; gap:22px}
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 #splash .orb{position:relative; width:96px; height:96px}
 #splash .orb i{position:absolute; inset:0; border-radius:50%; border:1.5px solid rgba(255,92,122,.75); animation:ring 2.4s ease-out infinite; opacity:0}
 #splash .orb i:nth-child(2){animation-delay:.8s} #splash .orb i:nth-child(3){animation-delay:1.6s}
 #splash .ember{position:absolute; inset:28px; border-radius:50%; background:radial-gradient(circle at 40% 35%, #ffe2b8, #ff5c7a 58%, #b8233f); box-shadow:0 0 34px rgba(255,92,122,.85); animation:flick 1.6s ease-in-out infinite}
+<<<<<<< HEAD
 #splash .flare{position:absolute; inset:-44px; border-radius:50%; opacity:0;
   background:radial-gradient(circle, rgba(255,226,184,.95), rgba(255,92,122,.35) 40%, transparent 70%); animation:flare .9s 1.5s ease-out forwards}
 #splash .spark{position:absolute; left:calc(50% - var(--s) / 2); top:calc(50% - var(--s) / 2); width:var(--s); height:var(--s); border-radius:50%;
@@ -322,6 +330,19 @@ body.is-playing .mark{animation:markpulse 1.6s ease-in-out infinite}
 @keyframes load{to{width:100%}}
 @keyframes shimmer{to{background-position:-200% 0}}
 @media (prefers-reduced-motion:reduce){ #splash .word span{opacity:1; transform:none; filter:none} #splash .bar b{width:100%} #splash .flare{display:none} }
+=======
+#splash .word{font-family:var(--font-display); font-weight:800; font-size:30px; letter-spacing:.34em; color:#fff; display:flex; padding-left:.34em}
+#splash .word span{display:inline-block; opacity:0; transform:translateY(16px); filter:blur(6px); animation:letter .75s cubic-bezier(.2,.7,.2,1) forwards}
+#splash .bar{width:170px; height:2px; background:rgba(255,255,255,.12); border-radius:2px; overflow:hidden}
+#splash .bar b{display:block; height:100%; width:0; background:linear-gradient(90deg,#ff5c7a,#ffb547); animation:load 1.9s cubic-bezier(.5,0,.2,1) forwards}
+#splash .msg{font-size:12px; color:rgba(255,255,255,.55); letter-spacing:.08em; min-height:16px; transition:opacity .3s}
+@keyframes ring{0%{transform:scale(.55);opacity:.9}100%{transform:scale(2.3);opacity:0}}
+@keyframes flick{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@keyframes breathe{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.08);opacity:1}}
+@keyframes letter{to{opacity:1;transform:none;filter:none}}
+@keyframes load{to{width:100%}}
+@media (prefers-reduced-motion:reduce){ #splash .word span{opacity:1; transform:none; filter:none} #splash .bar b{width:100%} }
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
@@ -340,6 +361,7 @@ body.is-playing #play{animation:ringpulse 1.8s ease-out infinite}
 .side::before{content:""; position:absolute; left:-40%; right:-40%; top:-90px; height:380px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, hsl(var(--h,200) 80% 60% / .5), transparent); filter:blur(18px)}
 .wave .card{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
 .scrub .fill{transition:width .25s linear}
+<<<<<<< HEAD
 /* ---------- gallery ---------- */
 .lede{color:var(--ink-2); margin:-6px 0 20px; max-width:58ch; font-size:14px}
 .sect{font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--ink-3); font-weight:600; margin:6px 0 12px}
@@ -376,14 +398,21 @@ select.txt{width:auto}
 .about{font-size:13px; color:var(--ink-2); line-height:1.6; padding:6px 0 10px}
 .about b{color:var(--ink)}
 @media (max-width:600px){ .setrow{flex-direction:column; align-items:flex-start} .setc{justify-content:flex-start} .txt{width:100%} }
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 </style>
 
 <div id="splash" aria-hidden="true">
   <div class="aura"></div>
+<<<<<<< HEAD
   <div class="aura2"></div>
   <div class="core">
     <div class="splash-eq" id="splashEq"></div>
     <div class="orb"><i></i><i></i><i></i><div class="ember"></div><div class="flare"></div></div>
+=======
+  <div class="core">
+    <div class="orb"><i></i><i></i><i></i><div class="ember"></div></div>
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
     <div class="word" id="splashWord"></div>
     <div class="bar"><b></b></div>
     <div class="msg" id="splashMsg">Tuning the wave…</div>
@@ -434,9 +463,12 @@ select.txt{width:auto}
   <button data-view="import" title="Import a link or list" aria-label="Import">
     <svg viewBox="0 0 24 24"><path d="M10.6 13.4a4 4 0 010-5.7l3-3a4 4 0 115.7 5.7l-1.3 1.3-1.4-1.4 1.3-1.3a2 2 0 10-2.9-2.9l-3 3a2 2 0 000 2.9l-1.4 1.4zm2.8-2.8a4 4 0 010 5.7l-3 3a4 4 0 11-5.7-5.7l1.3-1.3 1.4 1.4-1.3 1.3a2 2 0 102.9 2.9l3-3a2 2 0 000-2.9l1.4-1.4z"/></svg>
   </button>
+<<<<<<< HEAD
   <button data-view="gallery" title="Gallery" aria-label="Gallery">
     <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm8-2h8v8h-8v-8zm2 2v4h4v-4h-4z"/></svg>
   </button>
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   <div class="spacer"></div>
   <div class="sep"></div>
   <button data-view="settings" title="Look &amp; feel" aria-label="Look and feel">
@@ -510,6 +542,7 @@ var PRESETS = [
   "linear-gradient(150deg,#232526,#414345 60%,#6b6b6b)"
 ];
 var SWATCHES = ["#ff5c7a","#4de0b0","#6aa6ff","#ffb547","#c77dff","#ffffff"];
+<<<<<<< HEAD
 var DEFAULTS = {
   accent:"#ff5c7a", bg:{type:"preset",v:0}, blur:0, dim:50, flat:false, panel:true,
   showSplash:true, autoplay:true, startView:"discover",
@@ -525,6 +558,8 @@ var MOODS = [
   {name:"Party",          q:"party"},
   {name:"Sleep",          q:"sleep ambient"}
 ];
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 
 /* ══════════ storage (never let blocked localStorage break the app) ══════════ */
 function load(k,d){ try{ var v=localStorage.getItem("ember."+k); return v?JSON.parse(v):d; }catch(e){ return d; } }
@@ -538,7 +573,11 @@ var S = {
   liked: load("liked",{}),
   playlists: load("playlists",[]),
   local: [],                               // session only — object URLs die on reload
+<<<<<<< HEAD
   cfg: Object.assign({}, DEFAULTS, load("cfg",{}))
+=======
+  cfg: load("cfg",{ accent:"#ff5c7a", bg:{type:"preset",v:0}, blur:0, dim:50, flat:false, panel:true })
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 };
 var $=function(i){return document.getElementById(i)};
 var panel=$("panel");
@@ -836,7 +875,10 @@ function noteHTML(title,body,btn){
 function render(){
   var v=S.view;
   if(v==="settings") return renderSettings();
+<<<<<<< HEAD
   if(v==="gallery")  return renderGallery();
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   if(v==="import")   return renderImport();
   if(v==="playlists")return renderPlaylists();
   if(v==="files"){
@@ -898,7 +940,11 @@ function failed(id){
     if(id!==S.reqId)return;
     panel.innerHTML=headHTML("Offline",null,"")+
       noteHTML("Could not reach the catalogue","The Audius node did not answer, or your connection dropped. Your own files still play.",
+<<<<<<< HEAD
         '<button class="btn" data-go="retry">Try again</button>'+(gsel?' <button class="btn ghost" data-go="gback">Back</button>':''));
+=======
+        '<button class="btn" data-go="retry">Try again</button>');
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
     after();
   };
 }
@@ -945,6 +991,7 @@ function renderImport(){
   after();
 }
 
+<<<<<<< HEAD
 var gsel = null;   // the mood or genre currently open in the gallery
 function renderGallery(){
   S.list = [];
@@ -1054,16 +1101,53 @@ function bindSettings(){
   var vb=$("sBlur"); if(vb){ vb.addEventListener("input",function(){ S.cfg.blur=+vb.value; $("vBlur").textContent=vb.value+"px"; saveCfg(); }); }
   var vd=$("sDim");  if(vd){ vd.addEventListener("input",function(){ S.cfg.dim=+vd.value; $("vDim").textContent=vd.value+"%"; saveCfg(); }); }
 }
+=======
+function renderSettings(){
+  S.list=[]; var c=S.cfg;
+  panel.innerHTML=headHTML("Look & feel",null,'<button class="btn ghost" data-go="reset">Reset</button>')+
+    '<div class="form">'+
+      '<div class="field"><label>Wallpaper</label>'+
+        '<div class="presets">'+PRESETS.map(function(g,i){
+          return '<button class="preset" data-bg="'+i+'" style="background-image:'+g+'" aria-pressed="'+(c.bg.type==="preset"&&c.bg.v===i?"true":"false")+'" aria-label="Preset '+(i+1)+'"></button>';
+        }).join("")+'</div>'+
+        '<div class="rowline" style="margin-top:4px"><button class="btn ghost" data-go="bgpick">Upload your own</button>'+
+        '<span class="hint">Resized to 1600px and stored on this device.</span></div></div>'+
+
+      '<div class="field"><label>Wallpaper blur · '+c.blur+'px</label>'+
+        '<input type="range" id="sBlur" min="0" max="40" value="'+c.blur+'"></div>'+
+      '<div class="field"><label>Darkness · '+c.dim+'%</label>'+
+        '<input type="range" id="sDim" min="0" max="90" value="'+c.dim+'"></div>'+
+
+      '<div class="field"><label>Accent colour</label>'+
+        '<div class="swatches">'+SWATCHES.map(function(h){
+          return '<button class="sw" data-sw="'+h+'" style="background:'+h+'" aria-pressed="'+(c.accent.toLowerCase()===h.toLowerCase()?"true":"false")+'" aria-label="'+h+'"></button>';
+        }).join("")+'<input type="color" id="sAcc" value="'+esc(c.accent)+'" aria-label="Custom accent"></div></div>'+
+
+      '<div class="field"><label>Performance</label>'+
+        '<label class="switch"><input type="checkbox" id="sFlat"'+(c.flat?" checked":"")+'> Reduce effects — turns off the glass blur</label>'+
+        '<div class="hint">Backdrop blur is redrawn by the GPU on every frame. On an older laptop this one switch is the difference between smooth and stuttering.</div></div>'+
+    '</div>';
+  after();
+}
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 
 /* ══════════ event wiring inside the panel ══════════ */
 function after(){
   markPlaying();
   var el;
+<<<<<<< HEAD
+=======
+  if((el=$("sBlur"))) el.oninput=function(){ S.cfg.blur=+this.value; saveCfg(); this.closest(".field").querySelector("label").textContent="Wallpaper blur · "+this.value+"px"; };
+  if((el=$("sDim")))  el.oninput=function(){ S.cfg.dim=+this.value;  saveCfg(); this.closest(".field").querySelector("label").textContent="Darkness · "+this.value+"%"; };
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   if((el=$("sAcc")))  el.oninput=function(){ S.cfg.accent=this.value; saveCfg(); };
   if((el=$("sFlat"))) el.onchange=function(){ S.cfg.flat=this.checked; saveCfg(); };
   if((el=$("dorun"))) el.onclick=runImport;
   if((el=$("spot")))  el.onclick=connectSpotify;
+<<<<<<< HEAD
   bindSettings();
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 }
 
 panel.addEventListener("click",function(e){
@@ -1072,15 +1156,22 @@ panel.addEventListener("click",function(e){
     var g=b.dataset.go;
     if(g==="playall"&&S.list.length) playFrom(0);
     else if(g==="retry") render();
+<<<<<<< HEAD
     else if(g==="rescan"){ var f=load("folder",null); if(f) scanFolder(f); else toast("Choose a folder first"); }
     else if(g==="goimport") setView("import");
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
     else if(g==="pick") $("filepick").click();
     else if(g==="folder") pickFolder();
     else if(g==="bgpick") $("bgpick").click();
     else if(g==="newpl"){ askName("New playlist",function(n){ var p=newPlaylist(n,[]); renderPlaylists(); toast("Created "+p.name); }); }
     else if(g==="backpl") setView("playlists");
     else if(g==="delpl"){ S.playlists=S.playlists.filter(function(x){return x.id!==S.openPl}); savePl(); setView("playlists"); }
+<<<<<<< HEAD
     else if(g==="reset"){ S.cfg=Object.assign({}, DEFAULTS); saveCfg(); render(); }
+=======
+    else if(g==="reset"){ S.cfg={accent:"#ff5c7a",bg:{type:"preset",v:0},blur:0,dim:50,flat:false,panel:true}; saveCfg(); render(); }
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
     return;
   }
   if((b=e.target.closest("[data-sp]"))){ importSpotify(b.dataset.sp,b.dataset.spn); return; }
@@ -1088,6 +1179,7 @@ panel.addEventListener("click",function(e){
   if((b=e.target.closest("[data-sw]"))){ S.cfg.accent=b.dataset.sw; saveCfg(); render(); return; }
   if((b=e.target.closest("[data-open]"))){ setView("playlists",b.dataset.open); return; }
   if((b=e.target.closest(".chip"))){ S.genre=b.dataset.g; setView("discover"); return; }
+<<<<<<< HEAD
   if((b=e.target.closest(".tile"))){ gsel={kind:b.dataset.kind, q:b.dataset.q, label:b.dataset.label}; render(); return; }
   if((b=e.target.closest("[data-sure]"))){
     if(!b.classList.contains("armed")){
@@ -1102,6 +1194,8 @@ panel.addEventListener("click",function(e){
     toast("Done"); render(); return;
   }
   if((b=e.target.closest("[data-go='gback']"))){ gsel=null; render(); return; }
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   if((b=e.target.closest("[data-add]"))){ e.stopPropagation(); pickPlaylist([S.list[+b.dataset.add]]); return; }
   if((b=e.target.closest("[data-like]"))){
     e.stopPropagation(); var t=S.list[+b.dataset.like];
@@ -1142,6 +1236,7 @@ function runImport(){
     return;
   }
 
+<<<<<<< HEAD
   var yt = raw.match(/[?&]list=([A-Za-z0-9_-]+)/);
   if(/youtube\.com|youtu\.be/i.test(raw)){
     if(yt){ importYouTube(yt[1], stat); } else { stat.textContent="Paste a playlist link (one with list= in it)."; }
@@ -1149,6 +1244,10 @@ function runImport(){
   }
   if(/spotify\.com/i.test(raw)){
     stat.textContent="Spotify playlists: connect below, then pick one.";
+=======
+  if(/spotify\.com|youtube\.com|youtu\.be/i.test(raw)){
+    stat.textContent="That link needs the desktop build — paste the song names instead.";
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
     return;
   }
 
@@ -1177,6 +1276,7 @@ function matchLines(lines,name,stat){
   })();
 }
 
+<<<<<<< HEAD
 function clean(t){
   return t.replace(/\s*[\(\[](official|lyrics?|audio|video|hd|4k|visualizer|remaster(ed)?)[^\)\]]*[\)\]]/ig,"")
           .replace(/\s{2,}/g," ").trim();
@@ -1203,12 +1303,18 @@ function importYouTube(id, stat){
   })("");
 }
 
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 /* ══════════ Spotify (desktop only) ══════════
    Authorization Code flow with PKCE. There is no client secret anywhere — a
    desktop app cannot keep one — so the app proves itself with a one-time
    verifier instead. Rust opens the browser and catches the redirect. */
+<<<<<<< HEAD
 var SPOTIFY_CLIENT_ID = "";
 function spotId(){ return S.cfg.spotifyId || SPOTIFY_CLIENT_ID; }          // ← paste your own Client ID (see README)
+=======
+var SPOTIFY_CLIENT_ID = "";          // ← paste your own Client ID (see README)
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 var SPOTIFY_PORT = 1421;
 var spotToken = null;
 
@@ -1223,12 +1329,20 @@ function randStr(n){
 }
 function connectSpotify(){
   var stat=$("spotstat");
+<<<<<<< HEAD
   if(!spotId()){ stat.textContent="Add your Client ID near the top of the script — see README step 3."; return; }
+=======
+  if(!SPOTIFY_CLIENT_ID){ stat.textContent="Add your Client ID near the top of the script — see README step 3."; return; }
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   var verifier=randStr(48);
   var redirect="http://127.0.0.1:"+SPOTIFY_PORT+"/callback";
   crypto.subtle.digest("SHA-256",new TextEncoder().encode(verifier)).then(function(h){
     var url="https://accounts.spotify.com/authorize?response_type=code"+
+<<<<<<< HEAD
       "&client_id="+encodeURIComponent(spotId())+
+=======
+      "&client_id="+encodeURIComponent(SPOTIFY_CLIENT_ID)+
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
       "&scope="+encodeURIComponent("playlist-read-private playlist-read-collaborative")+
       "&redirect_uri="+encodeURIComponent(redirect)+
       "&code_challenge_method=S256&code_challenge="+b64url(h);
@@ -1240,7 +1354,11 @@ function connectSpotify(){
       method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"},
       body:"grant_type=authorization_code&code="+encodeURIComponent(code)+
            "&redirect_uri="+encodeURIComponent(redirect)+
+<<<<<<< HEAD
            "&client_id="+encodeURIComponent(spotId())+
+=======
+           "&client_id="+encodeURIComponent(SPOTIFY_CLIENT_ID)+
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
            "&code_verifier="+encodeURIComponent(verifier)
     }).then(function(r){ return r.json(); });
   }).then(function(tok){
@@ -1290,6 +1408,7 @@ function start(){
   $("prev").disabled=$("next").disabled=$("play").disabled=false;
 }
 function pop(el){ if(!el) return; el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop"); }
+<<<<<<< HEAD
 function discordUpdate(t){
   if(!isDesktop||!S.cfg.discord||!S.cfg.discordAppId) return;
   T.core.invoke("discord_set",{ appId:S.cfg.discordAppId, details:t.title, state:"by "+t.artist }).catch(function(){});
@@ -1298,6 +1417,8 @@ function discordClear(){
   if(!isDesktop) return;
   T.core.invoke("discord_clear").catch(function(){});
 }
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 function paintNow(t){
   fillArt($("nowart"),t,false); fillArt($("sideart"),t,true);
   $("side").style.setProperty("--h", hueOf(t.id));
@@ -1307,7 +1428,11 @@ function paintNow(t){
   if(t.src==="local")bits.push("your file");
   $("nows").textContent=bits.join(" · "); $("sides").textContent=t.artist;
   document.title=t.title+" — Ember";
+<<<<<<< HEAD
   syncNowLike(); renderQueue(); markPlaying(); discordUpdate(t);
+=======
+  syncNowLike(); renderQueue(); markPlaying();
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 }
 function syncNowLike(){
   var t=S.queue[S.qi];
@@ -1347,7 +1472,11 @@ function step(d){
 function toggle(){ if(!S.queue.length)return; audio.paused?audio.play().catch(function(){}):audio.pause(); }
 
 audio.addEventListener("play",function(){ document.body.classList.add("is-playing"); $("pi").innerHTML='<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>'; $("play").setAttribute("aria-label","Pause"); markPlaying(); });
+<<<<<<< HEAD
 audio.addEventListener("pause",function(){ document.body.classList.remove("is-playing"); discordClear(); $("pi").innerHTML='<path d="M7 4l13 8-13 8V4z"/>'; $("play").setAttribute("aria-label","Play"); markPlaying(); });
+=======
+audio.addEventListener("pause",function(){ document.body.classList.remove("is-playing"); $("pi").innerHTML='<path d="M7 4l13 8-13 8V4z"/>'; $("play").setAttribute("aria-label","Play"); markPlaying(); });
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 audio.addEventListener("loadedmetadata",function(){
   var t=S.queue[S.qi];
   if(t&&t.src==="local"&&!t.dur&&isFinite(audio.duration)){ t.dur=audio.duration; if(S.view==="files")render(); }
@@ -1360,7 +1489,10 @@ audio.addEventListener("timeupdate",function(){
   $("time").textContent=fmtTime(audio.currentTime)+" / "+fmtTime(d);
 });
 audio.addEventListener("ended",function(){
+<<<<<<< HEAD
   if(!S.cfg.autoplay && S.repeat!=="one") return;
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
   if(S.repeat==="one"){ audio.currentTime=0; audio.play().catch(function(){}); return; }
   if(S.repeat==="off"&&!S.shuffle&&S.qi===S.queue.length-1) return;
   step(1);
@@ -1462,6 +1594,7 @@ if("mediaSession" in navigator){
 /* ══════════ boot ══════════ */
 applyCfg(); badges();
 (function splashBoot(){
+<<<<<<< HEAD
   var word = $("splashWord");
   if (word) word.innerHTML = "EMBER".split("").map(function(c,i){
     return '<span style="animation-delay:' + (0.35 + i*0.1).toFixed(2) + 's">' + c + '</span>';
@@ -1489,10 +1622,19 @@ applyCfg(); badges();
   }
   var m = $("splashMsg"), lines = ["Tuning the wave\u2026", "Finding your music\u2026", "Almost there"];
   lines.forEach(function(text,k){ setTimeout(function(){ if(m) m.textContent = text; }, k*650); });
+=======
+  var sw = $("splashWord");
+  if (sw) sw.innerHTML = "EMBER".split("").map(function(c,i){
+    return '<span style="animation-delay:' + (0.2 + i*0.09).toFixed(2) + 's">' + c + '</span>';
+  }).join("");
+  var m = $("splashMsg"), lines = ["Tuning the wave…", "Finding your music…", "Almost there"];
+  lines.forEach(function(text,i){ setTimeout(function(){ if(m) m.textContent = text; }, i*600); });
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 })();
 var splashStart = Date.now(), splashDone = false;
 function doneSplash(){
   if (splashDone) return; splashDone = true;
+<<<<<<< HEAD
   var wait = Math.max(0, 2500 - (Date.now() - splashStart));
   setTimeout(function(){
     var sp = $("splash"); if (!sp) return;
@@ -1503,6 +1645,17 @@ function doneSplash(){
 setTimeout(doneSplash, 6000);   // never leave the user staring at the splash
 if(!S.cfg.showSplash){ var introEl=$("splash"); if(introEl) introEl.remove(); }
 setView(S.cfg.startView||"discover");
+=======
+  var wait = Math.max(0, 1900 - (Date.now() - splashStart));
+  setTimeout(function(){
+    var sp = $("splash"); if (!sp) return;
+    sp.classList.add("out");
+    setTimeout(function(){ sp.remove(); }, 750);
+  }, wait);
+}
+setTimeout(doneSplash, 6000);   // never leave the user staring at the splash
+render();
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 if(isDesktop){ var savedFolder=load("folder",null); if(savedFolder) scanFolder(savedFolder); }
 })();
 </script>

@@ -15,7 +15,10 @@ tauri = { version = "2", features = ["protocol-asset"] }
 tauri-plugin-dialog = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+<<<<<<< HEAD
 discord-rich-presence = "0.2"
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 
 # A smaller, faster binary. Strips debug symbols and lets the compiler
 # optimise across the whole crate instead of one file at a time.

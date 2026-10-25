@@ -7,6 +7,7 @@ and this project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ### Added
 - Gallery: browse Audius by mood and genre without adding anything first
 - Settings: startup view, intro toggle, autoplay, volume, data reset with confirmation
@@ -20,6 +21,8 @@ and this project uses [Semantic Versioning](https://semver.org/).
 - Offline gallery pages had no way back
 - Phone-width layout grid rows
 
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 ### Ideas
 - Light theme
 - YouTube playlist import
@@ -40,5 +43,10 @@ First release.
 - Keyboard shortcuts and OS media-key support
 - Native builds for Windows, macOS and Linux
 
+<<<<<<< HEAD
 [Unreleased]: https://github.com/YOUR-USERNAME/ember/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/YOUR-USERNAME/ember/releases/tag/v0.1.0
+=======
+[Unreleased]: https://github.com/1xle/ember/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/1xle/ember/releases/tag/v0.1.0
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb

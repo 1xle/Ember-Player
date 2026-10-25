@@ -290,7 +290,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a347dcabdae9c31b0825fd6a8bed285ec9c2acb89c47827126d52fa4f59cece3"
 dependencies = [
  "fnv",
+<<<<<<< HEAD
  "uuid 1.29.0",
+=======
+ "uuid",
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
  "web-time",
 ]
 
@@ -592,6 +596,7 @@ dependencies = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "discord-rich-presence"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -605,6 +610,8 @@ dependencies = [
 ]
 
 [[package]]
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 name = "dispatch2"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -725,7 +732,10 @@ checksum = "4ef6b89e5b37196644d8796de5268852ff179b44e96276cf4290264843743bb7"
 name = "ember"
 version = "0.1.0"
 dependencies = [
+<<<<<<< HEAD
  "discord-rich-presence",
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
  "serde",
  "serde_json",
  "tauri",
@@ -1022,6 +1032,7 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
+<<<<<<< HEAD
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff2abc00be7fca6ebc474524697ae276ad847ad0a6b3faa4bcb027e9a4614ad0"
@@ -1033,6 +1044,8 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "899def5c37c4fd7b2664648c28120ecec138e4d395b459e5ca34f9cce2dd77fd"
@@ -2574,7 +2587,11 @@ dependencies = [
  "serde",
  "serde_json",
  "url",
+<<<<<<< HEAD
  "uuid 1.29.0",
+=======
+ "uuid",
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 ]
 
 [[package]]
@@ -3179,7 +3196,11 @@ dependencies = [
  "thiserror 2.0.21",
  "time",
  "url",
+<<<<<<< HEAD
  "uuid 1.29.0",
+=======
+ "uuid",
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
  "walkdir",
 ]
 
@@ -3339,7 +3360,11 @@ dependencies = [
  "toml 1.1.8+spec-1.1.0",
  "url",
  "urlpattern",
+<<<<<<< HEAD
  "uuid 1.29.0",
+=======
+ "uuid",
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
  "walkdir",
 ]
 
@@ -3721,6 +3746,7 @@ checksum = "b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be"
 
 [[package]]
 name = "uuid"
+<<<<<<< HEAD
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bc5cf98d8186244414c848017f0e2676b3fcb46807f6668a97dfe67359a3c4b7"
@@ -3730,6 +3756,8 @@ dependencies = [
 
 [[package]]
 name = "uuid"
+=======
+>>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 version = "1.29.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a0e2d11620c50695fe12bbbfde96b3477fe606e7284c22d505c12ce51214514"
