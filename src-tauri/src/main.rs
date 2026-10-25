@@ -16,7 +16,6 @@ use std::net::TcpListener;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
-<<<<<<< HEAD
 use std::sync::Mutex;
 
 use discord_rich_presence::{activity, DiscordIpc, DiscordIpcClient};
@@ -27,10 +26,6 @@ use serde::Serialize;
 /// the next update simply tries again.
 static DISCORD: Mutex<Option<DiscordIpcClient>> = Mutex::new(None);
 
-=======
-use serde::Serialize;
-
->>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 /// Extensions we treat as playable. The webview can decode all of these.
 const AUDIO: &[&str] = &[
     "mp3", "m4a", "aac", "ogg", "oga", "opus", "wav", "flac", "webm",
@@ -223,7 +218,6 @@ fn percent_decode(s: &str) -> String {
     String::from_utf8_lossy(&out).to_string()
 }
 
-<<<<<<< HEAD
 /// Show what is playing on the user's Discord profile.
 #[tauri::command]
 fn discord_set(app_id: String, details: String, state: String) -> Result<(), String> {
@@ -258,21 +252,15 @@ fn discord_clear() {
     }
 }
 
-=======
->>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .invoke_handler(tauri::generate_handler![
             scan_folder,
             open_url,
-<<<<<<< HEAD
             oauth_listen,
             discord_set,
             discord_clear
-=======
-            oauth_listen
->>>>>>> 965359227f3ec497b0184f97b95072d6fe2c6efb
         ])
         .run(tauri::generate_context!())
         .expect("Ember failed to start");

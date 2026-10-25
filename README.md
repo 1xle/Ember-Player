@@ -6,8 +6,8 @@ Streams free, legally licensed music. Plays your own MP3s. Looks how you want
 it to. Runs in about **60 MB of RAM**, because it doesn't ship a second copy of
 Chrome.
 
-[![CI](https://github.com/YOUR-USERNAME/ember/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR-USERNAME/ember/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/YOUR-USERNAME/ember?include_prereleases)](https://github.com/YOUR-USERNAME/ember/releases)
+[![CI](https://github.com/1xle/ember/actions/workflows/ci.yml/badge.svg)](https://github.com/1xle/ember/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/1xle/ember?include_prereleases)](https://github.com/1xle/ember/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Built with Tauri](https://img.shields.io/badge/built%20with-Tauri%202-24C8DB)](https://tauri.app)
 
@@ -71,7 +71,7 @@ If you just want to **use** Ember, you only need the first row.
 
 ### Option A — use the installer (recommended)
 
-1. Go to the [**Releases page**](https://github.com/YOUR-USERNAME/ember/releases/latest).
+1. Go to the [**Releases page**](https://github.com/1xle/ember/releases/latest).
 2. Under **Assets**, download **`Ember_x.y.z_x64_en-US.msi`**.
 3. Double-click it.
 4. Windows will say **"Windows protected your PC"**. This is normal for an app
@@ -400,7 +400,7 @@ cargo --version
 Either clone it:
 
 ```powershell
-git clone https://github.com/YOUR-USERNAME/ember.git
+git clone https://github.com/1xle/ember.git
 cd ember
 ```
 
